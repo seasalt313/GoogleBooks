@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { SearchService } from './second-page.service';
 import { Subject } from 'rxjs/Subject';
-import { AnimationQueryMetadata } from '@angular/animations';
 
 @Component({
   selector: 'app-second-page',
