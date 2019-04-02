@@ -1,0 +1,24 @@
+.subtitle {
+    border-bottom: 1px solid grey;
+
+    p {
+        padding: 20px;
+    }
+}
+
+.book-card {
+    max-width: 400px;
+}
+
+
+
+.header-image {
+    background-image: url('/assets/avatar.jpeg');
+    background-size: cover;
+}
+
+@media only screen and (max-width: 600px) {
+    mat-grid-tile {
+        width: 100% !important;
+    }
+}

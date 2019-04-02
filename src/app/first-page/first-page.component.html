@@ -1,0 +1,35 @@
+<div class="subtitle">
+  <p>The books below are the results of the simple query I was to use, using the Google Books API. The instructions
+    stated an example query would be: "https://www.googleapis.com/books/v1/volumes?q=css&maxresults=40". Please see the
+    results below. </p>
+</div>
+
+<mat-grid-list cols="1" rowHeight="900px" margin="100">
+
+  <mat-grid-tile id="book" class="mat-grid-list" *ngFor="let book of books">
+    <mat-card class="book-card">
+
+      <mat-card-header>
+        <div mat-card-avatar class="header-image"></div>
+
+        <mat-card-title id="book-title">
+          Title: {{ book.volumeInfo.title }}
+        </mat-card-title>
+
+        <mat-card-subtitle>
+          Authors: {{book.volumeInfo.authors}}
+        </mat-card-subtitle>
+      </mat-card-header>
+
+      <img mat-card-image src="{{book.volumeInfo.imageLinks?.thumbnail}}" alt="photo">
+      <mat-card-content>
+        <p id="book-description">Description: {{book.searchInfo?.textSnippet}}</p>
+        <p id="book-rating">Rating: {{book.volumeInfo.averageRating}}</p>
+      </mat-card-content>
+      <!-- <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions> -->
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

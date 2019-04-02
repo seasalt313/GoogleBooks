@@ -1,0 +1,23 @@
+.search-header {
+    text-align: center;
+    margin: 20px;
+    padding: 30px;
+    border-bottom: 1px solid grey;
+
+    input {
+        height: 20px;
+        width: 500px;
+        padding: 10px;
+        font-size: 20px;
+    }
+}
+
+mat-card {
+    width: 350px;
+    max-height: 1000;
+
+    img {
+        padding: 10px 0 10px 0;
+    }
+
+}

@@ -1,0 +1,36 @@
+<div class="search-header">
+  <h1>Search here to query the entire Google Books API!</h1>
+  <input (keyup)="searchTerm$.next($event.target.value)">
+</div>
+
+
+
+
+
+<mat-grid-list cols="2" rowHeight="500px" margin="300px">
+
+  <mat-grid-tile id="book" class="mat-grid-list" *ngFor="let book of books">
+    <mat-card class="book-card">
+
+      <mat-card-header>
+        <mat-card-title id="book-title">
+          Title: {{ book.volumeInfo?.title }}
+        </mat-card-title>
+
+        <mat-card-subtitle>
+          Authors: {{book.volumeInfo?.authors || ' No authors listed!'}}
+        </mat-card-subtitle>
+      </mat-card-header>
+      <img src="{{book.volumeInfo.imageLinks?.thumbnail}}" alt="No photo available">
+
+      <mat-card-content>
+        <p id="book-description" limitTo="slice:0:3">Text Snippet:
+          {{book.searchInfo?.textSnippet || ' No text available!'}}</p>
+        <br>
+        <br>
+        <a href="{{book.volumeInfo?.previewLink}}">Preview {{book.volumeInfo?.title}}</a>
+
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
